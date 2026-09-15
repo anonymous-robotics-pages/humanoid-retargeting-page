@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Anonymous supplementary material for humanoid motion retargeting.">
+  <title>Beyond Pose Matching — Anonymous Supplementary Material</title>
+  <link rel="stylesheet" href="./static/css/style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Anonymous Supplementary Material</p>
+      <h1>Beyond Pose Matching: Feasibility, Embodiment Compatibility, and Trackability in Humanoid Motion Retargeting</h1>
+      <p class="lead">Additional qualitative results, videos, and comparisons for anonymous review.</p>
+    </header>
+
+    <section>
+      <h2>Abstract</h2>
+      <p>
+        Human motion retargeting provides a scalable means of generating reference motions for learning humanoid whole-body skills.
+        However, a retargeted motion that closely matches the source human pose is not necessarily suitable for learning-based whole-body motion tracking.
+        Embodiment differences, geometric incompatibility with the environment, and limited trackable motion range can lead to self-collisions, ground penetration, joint saturation, and excessively fast reference motions.
+        This work studies humanoid motion retargeting from three perspectives: geometric feasibility, embodiment compatibility, and motion trackability.
+        We examine these perspectives using collision-constrained differential inverse kinematics for nonpenetration, shoulder key-body correspondence for embodiment compatibility, and horizontal root-velocity scaling based on locomotion capability.
+        Their effects are evaluated through controlled analyses of the corresponding failure modes.
+        Across two humanoid platforms, the resulting retargeting design improves geometric feasibility and downstream motion-tracking performance over existing baselines.
+        Physical-robot experiments further show that the resulting retargeting design improves execution repeatability for the evaluated motion.
+      </p>
+    </section>
+
+    <section>
+      <h2>Method Overview</h2>
+      <figure class="media-card">
+        <img src="./static/images/block_diagram.png" alt="Overview of the motion-retargeting and downstream tracking pipeline">
+        <figcaption>
+          Motion retargeting is analyzed through geometric feasibility, embodiment compatibility, and motion trackability.
+        </figcaption>
+      </figure>
+      <p class="hint">Replace <code>./static/images/block_diagram.png</code> with the anonymized overview figure.</p>
+    </section>
+
+    <section>
+      <h2>Qualitative Comparisons</h2>
+      <div class="grid">
+        <figure class="media-card">
+          <img src="./static/images/qualitative_comparison.png" alt="Qualitative retargeting comparison">
+          <figcaption>Representative comparison of retargeting artifacts and kinematic-limit behavior.</figcaption>
+        </figure>
+        <figure class="media-card">
+          <img src="./static/images/foot_contact.png" alt="Foot-contact comparison">
+          <figcaption>Foot-contact comparison for a video-reconstructed motion.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Videos</h2>
+      <div class="grid">
+        <article class="media-card">
+          <video controls muted loop playsinline preload="metadata">
+            <source src="./static/videos/retargeting_comparison.mp4" type="video/mp4">
+          </video>
+          <h3>Retargeting Comparison</h3>
+          <p>Side-by-side comparison of the proposed method and baseline retargeting methods.</p>
+        </article>
+
+        <article class="media-card">
+          <video controls muted loop playsinline preload="metadata">
+            <source src="./static/videos/dynamic_motions.mp4" type="video/mp4">
+          </video>
+          <h3>Dynamic Motions</h3>
+          <p>Examples illustrating horizontal root-velocity scaling for dynamic motions.</p>
+        </article>
+
+        <article class="media-card">
+          <video controls muted loop playsinline preload="metadata">
+            <source src="./static/videos/hardware.mp4" type="video/mp4">
+          </video>
+          <h3>Physical-Robot Experiments</h3>
+          <p>Repeated physical-robot executions of a video-reconstructed human motion.</p>
+        </article>
+      </div>
+      <p class="hint">Rename the MP4 files or edit the relative paths above. No external hosting is required.</p>
+    </section>
+
+    <section>
+      <h2>Additional Results</h2>
+      <div class="grid">
+        <figure class="media-card">
+          <img src="./static/images/ground_penetration.png" alt="Ground-penetration analysis">
+          <figcaption>Ground-penetration prevention and downstream policy learning.</figcaption>
+        </figure>
+        <figure class="media-card">
+          <img src="./static/images/root_velocity.png" alt="Horizontal root-velocity scaling analysis">
+          <figcaption>Effect of horizontal root-velocity scaling on policy learning.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <footer>
+      <p>Anonymous supplementary material for peer review.</p>
+    </footer>
+  </main>
+</body>
+</html>
