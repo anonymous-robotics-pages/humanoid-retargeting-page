@@ -1,107 +1,106 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="description" content="Anonymous supplementary material for humanoid motion retargeting.">
-  <title>Beyond Pose Matching — Anonymous Supplementary Material</title>
-  <link rel="stylesheet" href="./static/css/style.css">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Anonymous project page: geometric feasibility, embodiment compatibility, and motion trackability in humanoid motion retargeting.">
+  <title>Beyond Pose Matching: Feasibility, Embodiment Compatibility, and Trackability in Humanoid Motion Retargeting</title>
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- Inter is loaded without blocking rendering; system fonts are used where Google Fonts is unreachable -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
 </head>
 <body>
-  <main class="page">
-    <header class="hero">
-      <p class="eyebrow">Anonymous Supplementary Material</p>
-      <h1>Beyond Pose Matching: Feasibility, Embodiment Compatibility, and Trackability in Humanoid Motion Retargeting</h1>
-      <p class="lead">Additional qualitative results, videos, and comparisons for anonymous review.</p>
-    </header>
 
-    <section>
-      <h2>Abstract</h2>
-      <p>
-        Human motion retargeting provides a scalable means of generating reference motions for learning humanoid whole-body skills.
-        However, a retargeted motion that closely matches the source human pose is not necessarily suitable for learning-based whole-body motion tracking.
-        Embodiment differences, geometric incompatibility with the environment, and limited trackable motion range can lead to self-collisions, ground penetration, joint saturation, and excessively fast reference motions.
-        This work studies humanoid motion retargeting from three perspectives: geometric feasibility, embodiment compatibility, and motion trackability.
-        We examine these perspectives using collision-constrained differential inverse kinematics for nonpenetration, shoulder key-body correspondence for embodiment compatibility, and horizontal root-velocity scaling based on locomotion capability.
-        Their effects are evaluated through controlled analyses of the corresponding failure modes.
-        Across two humanoid platforms, the resulting retargeting design improves geometric feasibility and downstream motion-tracking performance over existing baselines.
-        Physical-robot experiments further show that the resulting retargeting design improves execution repeatability for the evaluated motion.
-      </p>
-    </section>
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"><span class="acronym">Beyond Pose Matching</span>: Feasibility, Embodiment Compatibility, and Trackability in Humanoid Motion Retargeting</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Anonymous Authors</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Method Overview</h2>
-      <figure class="media-card">
-        <img src="./static/images/block_diagram.png" alt="Overview of the motion-retargeting and downstream tracking pipeline">
-        <figcaption>
-          Motion retargeting is analyzed through geometric feasibility, embodiment compatibility, and motion trackability.
-        </figcaption>
-      </figure>
-      <p class="hint">Replace <code>./static/images/block_diagram.png</code> with the anonymized overview figure.</p>
-    </section>
 
-    <section>
-      <h2>Qualitative Comparisons</h2>
-      <div class="grid">
-        <figure class="media-card">
-          <img src="./static/images/qualitative_comparison.png" alt="Qualitative retargeting comparison">
-          <figcaption>Representative comparison of retargeting artifacts and kinematic-limit behavior.</figcaption>
-        </figure>
-        <figure class="media-card">
-          <img src="./static/images/foot_contact.png" alt="Foot-contact comparison">
-          <figcaption>Foot-contact comparison for a video-reconstructed motion.</figcaption>
+  <!-- Main video -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- GitHub Pages first: anonymous.4open.science ignores Range requests, which Safari needs for video. The relative path is the fallback. -->
+        <video id="main-video" autoplay controls muted playsinline loop preload="metadata">
+          <source src="https://anonymous-robotics-pages.github.io/humanoid-retargeting-page/static/videos/main_video.mp4" type="video/mp4">
+          <source src="static/videos/main_video.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+  <!-- End main video -->
+
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Human motion retargeting provides a scalable means of generating reference motions for learning humanoid whole-body skills. However, a retargeted motion that closely matches the source human pose is not necessarily suitable for learning-based whole-body motion tracking. Embodiment differences, geometric incompatibility with the environment, and limited trackable motion range can lead to self-collisions, ground penetration, joint saturation, and excessively fast reference motions. This work studies humanoid motion retargeting from three perspectives: <em>geometric feasibility</em>, <em>embodiment compatibility</em>, and <em>motion trackability</em>. We examine these perspectives using collision-constrained differential inverse kinematics for nonpenetration, shoulder key-body correspondence for embodiment compatibility, and horizontal root-velocity scaling based on locomotion capability. Their effects are evaluated through controlled analyses of the corresponding failure modes. Across two humanoid platforms, the resulting retargeting design improves geometric feasibility and downstream motion-tracking performance over existing baselines. Physical-robot experiments further show that the resulting retargeting design improves execution repeatability for the evaluated motion.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+  <!-- Framework -->
+  <section class="hero is-small" id="framework">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Framework</h2>
+        <figure>
+          <img class="framework-figure" src="static/images/framework.png" alt="Overview of the humanoid motion-retargeting and downstream tracking pipeline" width="1920" height="654" loading="lazy">
+          <figcaption class="framework-caption">
+            <strong>Overview of the humanoid motion-retargeting and downstream tracking pipeline.</strong> Human motions from diverse sources are adapted to the target embodiment through human&ndash;robot key-body matching for embodiment compatibility and horizontal root-velocity scaling for motion trackability. The adapted motions are retargeted using two-stage differential IK with linearized signed-distance constraints for self-collision and ground-penetration prevention. The resulting robot references are used to train RL-based whole-body motion-tracking policies, which are transferred to the physical robot without real-world fine-tuning.
+          </figcaption>
         </figure>
       </div>
-    </section>
-
-    <section>
-      <h2>Videos</h2>
-      <div class="grid">
-        <article class="media-card">
-          <video controls muted loop playsinline preload="metadata">
-            <source src="./static/videos/retargeting_comparison.mp4" type="video/mp4">
-          </video>
-          <h3>Retargeting Comparison</h3>
-          <p>Side-by-side comparison of the proposed method and baseline retargeting methods.</p>
-        </article>
-
-        <article class="media-card">
-          <video controls muted loop playsinline preload="metadata">
-            <source src="./static/videos/dynamic_motions.mp4" type="video/mp4">
-          </video>
-          <h3>Dynamic Motions</h3>
-          <p>Examples illustrating horizontal root-velocity scaling for dynamic motions.</p>
-        </article>
-
-        <article class="media-card">
-          <video controls muted loop playsinline preload="metadata">
-            <source src="./static/videos/hardware.mp4" type="video/mp4">
-          </video>
-          <h3>Physical-Robot Experiments</h3>
-          <p>Repeated physical-robot executions of a video-reconstructed human motion.</p>
-        </article>
-      </div>
-      <p class="hint">Rename the MP4 files or edit the relative paths above. No external hosting is required.</p>
-    </section>
-
-    <section>
-      <h2>Additional Results</h2>
-      <div class="grid">
-        <figure class="media-card">
-          <img src="./static/images/ground_penetration.png" alt="Ground-penetration analysis">
-          <figcaption>Ground-penetration prevention and downstream policy learning.</figcaption>
-        </figure>
-        <figure class="media-card">
-          <img src="./static/images/root_velocity.png" alt="Horizontal root-velocity scaling analysis">
-          <figcaption>Effect of horizontal root-velocity scaling on policy learning.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <footer>
-      <p>Anonymous supplementary material for peer review.</p>
-    </footer>
+    </div>
+  </section>
+  <!-- End framework -->
   </main>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
