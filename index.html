@@ -83,6 +83,59 @@
     </div>
   </section>
   <!-- End framework -->
+
+
+  <!-- Motion retargeting from human videos -->
+  <section class="hero is-small is-light" id="human-videos">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Motion Retargeting from Human Videos</h2>
+        <div class="video-grid">
+          <video data-play-in-view muted loop playsinline controls preload="metadata">
+            <source src="https://anonymous-robotics-pages.github.io/humanoid-retargeting-page/static/videos/vicap/Abracadabra.mp4" type="video/mp4">
+            <source src="static/videos/vicap/Abracadabra.mp4" type="video/mp4">
+          </video>
+          <video data-play-in-view muted loop playsinline controls preload="metadata">
+            <source src="https://anonymous-robotics-pages.github.io/humanoid-retargeting-page/static/videos/vicap/anxiety.mp4" type="video/mp4">
+            <source src="static/videos/vicap/anxiety.mp4" type="video/mp4">
+          </video>
+          <video data-play-in-view muted loop playsinline controls preload="metadata">
+            <source src="https://anonymous-robotics-pages.github.io/humanoid-retargeting-page/static/videos/vicap/bad.mp4" type="video/mp4">
+            <source src="static/videos/vicap/bad.mp4" type="video/mp4">
+          </video>
+          <video data-play-in-view muted loop playsinline controls preload="metadata">
+            <source src="https://anonymous-robotics-pages.github.io/humanoid-retargeting-page/static/videos/vicap/haidilao.mp4" type="video/mp4">
+            <source src="static/videos/vicap/haidilao.mp4" type="video/mp4">
+          </video>
+          <video data-play-in-view muted loop playsinline controls preload="metadata">
+            <source src="https://anonymous-robotics-pages.github.io/humanoid-retargeting-page/static/videos/vicap/lemonade.mp4" type="video/mp4">
+            <source src="static/videos/vicap/lemonade.mp4" type="video/mp4">
+          </video>
+          <video data-play-in-view muted loop playsinline controls preload="metadata">
+            <source src="https://anonymous-robotics-pages.github.io/humanoid-retargeting-page/static/videos/vicap/lushlife.mp4" type="video/mp4">
+            <source src="static/videos/vicap/lushlife.mp4" type="video/mp4">
+          </video>
+          <video data-play-in-view muted loop playsinline controls preload="metadata">
+            <source src="https://anonymous-robotics-pages.github.io/humanoid-retargeting-page/static/videos/vicap/red.mp4" type="video/mp4">
+            <source src="static/videos/vicap/red.mp4" type="video/mp4">
+          </video>
+          <video data-play-in-view muted loop playsinline controls preload="metadata">
+            <source src="https://anonymous-robotics-pages.github.io/humanoid-retargeting-page/static/videos/vicap/touch.mp4" type="video/mp4">
+            <source src="static/videos/vicap/touch.mp4" type="video/mp4">
+          </video>
+          <video data-play-in-view muted loop playsinline controls preload="metadata">
+            <source src="https://anonymous-robotics-pages.github.io/humanoid-retargeting-page/static/videos/vicap/whiplash.mp4" type="video/mp4">
+            <source src="static/videos/vicap/whiplash.mp4" type="video/mp4">
+          </video>
+          <video data-play-in-view muted loop playsinline controls preload="metadata">
+            <source src="https://anonymous-robotics-pages.github.io/humanoid-retargeting-page/static/videos/vicap/youngwild.mp4" type="video/mp4">
+            <source src="static/videos/vicap/youngwild.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End motion retargeting from human videos -->
   </main>
 
 
@@ -101,6 +154,19 @@
       </div>
     </div>
   </footer>
+
+  <!-- Grid clips play only while visible, so the clips do not all stream at once -->
+  <script>
+    (function () {
+      var clips = document.querySelectorAll('video[data-play-in-view]');
+      function play(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      if (!('IntersectionObserver' in window)) { clips.forEach(play); return; }
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) play(e.target); else e.target.pause(); });
+      }, { threshold: 0.25 });
+      clips.forEach(function (v) { observer.observe(v); });
+    })();
+  </script>
 
 </body>
 </html>
