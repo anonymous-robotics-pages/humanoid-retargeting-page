@@ -294,6 +294,10 @@ body {
   background: #000;
 }
 
+.video-grid.one-column {
+  grid-template-columns: 1fr;
+}
+
 .results-carousel {
   overflow: hidden;
   padding: 1rem 0;
